@@ -1,0 +1,98 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-container img {
+    max-height: 60px;
+}
+
+.button-container {
+    display: flex;
+}
+
+.button-container a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 20px;
+    padding: 10px 20px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.button-container a::before {
+    content: "";
+    position: absolute;
+    background: #fff;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+.button-container a:hover::before {
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh; /* Para que ocupe toda la altura de la ventana */
+}
+.image-container img {
+    max-width: 100%;
+    border-radius: 50%;
+    margin-right: 20px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.text-container {
+    color: #000000; /* Cambia el color del texto según tu preferencia */
+    text-align: center;
+    text-align: left;
+}
+
+.text-container h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonSlide {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-5px);
+    }
+}
+
+.button-container a:hover {
+    animation: buttonSlide 0.3s ease-in-out;
+    
+}
